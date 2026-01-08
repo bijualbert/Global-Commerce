@@ -27,6 +27,31 @@ export default function Dashboard() {
     status: r.status
   })) || [];
 
+  const handleDownloadReport = () => {
+    const reportData = {
+      summary: {
+        totalProducts,
+        activeAutomations,
+        liveRegions,
+      },
+      regions: regions?.map(r => ({
+        code: r.code,
+        name: r.name,
+        status: r.status,
+      })) || [],
+    };
+
+    const blob = new Blob([JSON.stringify(reportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `gm-commerce-report-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
@@ -35,7 +60,10 @@ export default function Dashboard() {
           <p className="text-muted-foreground mt-1">Global commerce performance at a glance.</p>
         </div>
         <div className="flex gap-3">
-          <button className="px-4 py-2 bg-white border border-border rounded-lg text-sm font-medium shadow-sm hover:bg-gray-50 transition-colors">
+          <button 
+            onClick={handleDownloadReport}
+            className="px-4 py-2 bg-white border border-border rounded-lg text-sm font-medium shadow-sm hover:bg-gray-50 transition-colors"
+          >
             Download Report
           </button>
           <button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-medium shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all hover:-translate-y-0.5">
