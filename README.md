@@ -15,5 +15,5 @@ multi-region inventory, pricing, automation, and analytics.
 - Hydrogen-style headless storefront
 
 ## Running Locally
-npm install
-npm run dev
+- npm install
+- npm run dev
