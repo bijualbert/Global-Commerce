@@ -9,6 +9,7 @@ import Dashboard from "@/pages/Dashboard";
 import Products from "@/pages/Products";
 import Automations from "@/pages/Automations";
 import Regions from "@/pages/Regions";
+import Settings from "@/pages/Settings";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/products" component={Products} />
       <Route path="/automations" component={Automations} />
       <Route path="/regions" component={Regions} />
+      <Route path="/settings" component={Settings} />
       <Route component={NotFound} />
     </Switch>
   );

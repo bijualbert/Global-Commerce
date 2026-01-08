@@ -227,9 +227,9 @@ export default function Products() {
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
                         <span className={product.inventoryCount === 0 ? 'text-red-500' : 'text-foreground'}>
-                          {product.inventoryCount}
+                          {product.inventoryCount ?? 0}
                         </span>
-                        {product.inventoryCount < 10 && (
+                        {(product.inventoryCount ?? 0) < 10 && (
                           <span className="text-[10px] px-1.5 py-0.5 bg-red-100 text-red-600 rounded">Low</span>
                         )}
                       </div>

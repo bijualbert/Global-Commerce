@@ -83,6 +83,13 @@ export const api = {
   },
 };
 
+export type Region = z.infer<typeof api.regions.list.responses[200]>[number];
+export type InsertRegion = z.infer<typeof api.regions.create.input>;
+export type Product = z.infer<typeof api.products.list.responses[200]>[number];
+export type InsertProduct = z.infer<typeof api.products.create.input>;
+export type AutomationRule = z.infer<typeof api.automation.list.responses[200]>[number];
+export type InsertAutomationRule = z.infer<typeof api.automation.create.input>;
+
 export function buildUrl(path: string, params?: Record<string, string | number>): string {
   let url = path;
   if (params) {
