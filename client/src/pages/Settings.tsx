@@ -95,7 +95,7 @@ export default function Settings() {
                 <Label htmlFor="api-key">Shopify API Token</Label>
                 <Input id="api-key" type="password" value="••••••••••••••••" readOnly />
               </div>
-              <Button variant="link" className="p-0 h-auto text-xs">Regenerate Token</Button>
+              <Button variant="ghost" className="p-0 h-auto text-xs">Regenerate Token</Button>
             </CardContent>
           </Card>
         </motion.div>

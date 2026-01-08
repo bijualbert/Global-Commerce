@@ -61,8 +61,12 @@ export default function Dashboard() {
         </div>
         <div className="flex gap-3">
           <button 
-            onClick={handleDownloadReport}
-            className="px-4 py-2 bg-white border border-border rounded-lg text-sm font-medium shadow-sm hover:bg-gray-50 transition-colors"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              handleDownloadReport();
+            }}
+            className="px-4 py-2 bg-white border border-border rounded-lg text-sm font-medium shadow-sm hover:bg-gray-50 transition-colors cursor-pointer"
           >
             Download Report
           </button>
