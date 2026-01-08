@@ -11,7 +11,6 @@ multi-region inventory, pricing, automation, and analytics.
 - Node.js
 - PostgreSQL
 - Drizzle ORM
-- Lovable (hosting)
 - Hydrogen-style headless storefront
 
 ## Running Locally
